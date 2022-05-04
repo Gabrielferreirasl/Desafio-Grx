@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Question from "../componets/Question";
 import SelectQuestion from "../componets/SelectQuestion";
+import TextQuestion from "../componets/TextQuestion";
 
 function Home() {
   const [questions, setQuestion] = useState({
@@ -40,6 +41,13 @@ function Home() {
       name="questionThree"
       onClickFunction={ handleForm }
       arrOptions={ arrOptions }
+      />
+      <TextQuestion
+      question="4 - Por favor, justifique sua resposta anterior"
+      name="questionFour"
+      onClickFunction={ handleForm }
+      minLength="15"
+      maxLength="200"
       />
     </main>
     </>
