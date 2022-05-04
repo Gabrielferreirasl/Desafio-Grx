@@ -13,6 +13,7 @@ function TextQuestion({ onClickFunction, question, name, field }) {
       name={ name }
       onChange={ onClickFunction }
       value={ field }
+      className="response-textArea"
       />
       <span
       className={ verifyTextLimit() && 'field-limit'}

@@ -1,7 +1,19 @@
 .selected-btn {
-    background-color: seagreen;
+  background-color: seagreen;
 }
 
 .field-limit {
-    color: red;
+  color: red;
+}
+
+.login {
+  padding: 10px;
+  width: 500px;
+  margin-top: 8px;
+}
+
+.response-textArea {
+  padding: 10px;
+  margin-right: 8px;
+  width: 450px;
 }

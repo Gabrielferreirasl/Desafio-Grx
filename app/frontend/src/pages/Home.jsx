@@ -65,6 +65,7 @@ function Home() {
       type='button'
       onClick={ handleClick }
       disabled={ verifyBtn() }
+      className="login"
       >
         Enviar
       </button>
