@@ -10,3 +10,8 @@ export interface Data {
   QuantidadeNegativa: number,
   QuantidadeNaoAvaliada: number
 }
+
+export interface AllData {
+  answers: Answers[],
+  data: Data
+}
