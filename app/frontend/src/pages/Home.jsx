@@ -20,6 +20,15 @@ function Home() {
     }))
   }
 
+  const verifyBtn = () => {
+    const arrResponses = Object.values(questions);
+    return arrResponses.some((res) => res === '');
+  }
+
+  const handleClick = () => {
+    console.log('chamada da api');
+  }
+
   return (
     <>
     <header>
@@ -49,6 +58,13 @@ function Home() {
       minLength="15"
       maxLength="200"
       />
+      <button
+      type='button'
+      onClick={ handleClick }
+      disabled={ verifyBtn() }
+      >
+        Enviar
+      </button>
     </main>
     </>
   )
