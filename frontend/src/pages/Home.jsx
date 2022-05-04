@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import Question from "../componets/Question";
+import SelectQuestion from "../componets/SelectQuestion";
 
 function Home() {
   const [questions, setQuestion] = useState({
     questionOne: '',
     questionTwo: '',
-    questionThree: 'sim',
+    questionThree: 'Sim',
     questionFour: '',
   });
+
+  const arrOptions = ['Sim', 'Não', 'Não Sei', 'Agora!!'];
 
   const handleForm = ({ target: { name, value } }) => {
     setQuestion((prev) => ({
@@ -31,6 +34,12 @@ function Home() {
       question="2 - Gosta de aprender com desafios?"
       name="questionTwo"
       onClickFunction={ handleForm }
+      />
+      <SelectQuestion
+      question="3 - Gostaria de fazer parte da GRX?"
+      name="questionThree"
+      onClickFunction={ handleForm }
+      arrOptions={ arrOptions }
       />
     </main>
     </>
