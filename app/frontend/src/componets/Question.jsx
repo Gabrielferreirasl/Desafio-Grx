@@ -1,14 +1,28 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import '../styles/home.css'
 
-function Question({ onClickFunction, question, name }) {
-
+function Question({ onClickFunction, question, name, selected }) {
   return (
     <div>
     <h2>{ question }</h2>
       <div>
-        <button name={ name } onClick={ onClickFunction }value="Sim">Sim</button>
-        <button name={ name } onClick={ onClickFunction } value="Não">Não</button>
+        <button
+        className={ selected === 'Sim' && 'selected-btn' }
+        name={ name } 
+        onClick={ onClickFunction }
+        value="Sim"
+        >
+          Sim
+        </button>
+        <button
+        name={ name }
+        onClick={ onClickFunction }
+        value="Não"
+        className={ selected === 'Não' && 'selected-btn' }
+        >
+          Não
+        </button>
       </div>    
     </div>
   )

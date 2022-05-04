@@ -39,11 +39,13 @@ function Home() {
       question="1 - Você se considera bom em lógica?"
       name="questionOne"
       onClickFunction={ handleForm }
+      selected={ questions.questionOne }
       />
       <Question 
       question="2 - Gosta de aprender com desafios?"
       name="questionTwo"
       onClickFunction={ handleForm }
+      selected={ questions.questionTwo }
       />
       <SelectQuestion
       question="3 - Gostaria de fazer parte da GRX?"
