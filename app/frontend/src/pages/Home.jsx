@@ -17,7 +17,7 @@ function Home() {
     setQuestion((prev) => ({
       ...prev,
       [name]: value,
-    }))
+    }));
   }
 
   const verifyBtn = () => {
@@ -59,6 +59,7 @@ function Home() {
       onClickFunction={ handleForm }
       minLength="15"
       maxLength="200"
+      field={ questions.questionFour }
       />
       <button
       type='button'
