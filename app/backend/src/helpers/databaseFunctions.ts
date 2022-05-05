@@ -2,14 +2,14 @@ import { Answer, Data } from "../interfaces/Coleta";
 import fs from 'fs/promises';
 
 const getActualData = async () => {
-  const data = await fs.readFile('../Data/ColetaData.json', { encoding: 'utf-8' });
+  const data = await fs.readFile('./src/database/ColetaData.json', { encoding: 'utf-8' });
   return JSON.parse(data);
 }
 
 export const writeNewAnswer = async (newAnswer: Answer) => {
   const actualData = await getActualData();
   const newData = [ ...actualData, newAnswer];
-  await fs.writeFile('../Data/ColetaData.json', JSON.stringify(newData), { encoding: 'utf-8' });
+  await fs.writeFile('./src/database/ColetaData.json', JSON.stringify(newData), { encoding: 'utf-8' });
 }
 
 export const getData = async(): Promise<Data> => {
