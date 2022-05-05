@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DataAnswers from "../componets/DataAnswers";
 import Question from "../componets/Question";
 import SelectQuestion from "../componets/SelectQuestion";
 import TextQuestion from "../componets/TextQuestion";
@@ -12,6 +13,8 @@ function Home() {
     questionFour: '',
   });
 
+  const [infoAnswers, setInfoAnswers] = useState(false);
+
   const arrOptions = ['Sim', 'Não', 'Não Sei', 'Agora!!'];
 
   const handleForm = ({ target: { name, value } }) => {
@@ -23,11 +26,13 @@ function Home() {
 
   const verifyBtn = () => {
     const arrResponses = Object.values(questions);
-    return arrResponses.some((res) => res === '');
+    return arrResponses.some((res) => res === '') || 
+    (questions.questionFour.length < 15 || questions.questionFour.length > 200);
   }
 
   const handleClick = async() => {
     await postData('/answers', questions);
+    setInfoAnswers(await requestData('/answers'))
   }
 
   return (
@@ -70,6 +75,7 @@ function Home() {
       >
         Enviar
       </button>
+      { infoAnswers && <DataAnswers infoAnswers={ infoAnswers } />}
     </main>
     </>
   )
