@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Question from "../componets/Question";
 import SelectQuestion from "../componets/SelectQuestion";
 import TextQuestion from "../componets/TextQuestion";
+import { postData, requestData } from "../services/requests";
 
 function Home() {
   const [questions, setQuestion] = useState({
@@ -25,8 +26,8 @@ function Home() {
     return arrResponses.some((res) => res === '');
   }
 
-  const handleClick = () => {
-    console.log('chamada da api');
+  const handleClick = async() => {
+    await postData('/answers', questions);
   }
 
   return (
