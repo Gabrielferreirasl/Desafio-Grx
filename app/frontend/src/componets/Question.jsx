@@ -8,7 +8,7 @@ function Question({ onClickFunction, question, name, selected }) {
     <h2>{ question }</h2>
       <div>
         <button
-        className={ selected === 'Sim' && 'selected-btn' }
+        className={ selected === 'Sim' ? 'selected-btn' : '' }
         name={ name } 
         onClick={ onClickFunction }
         value="Sim"
@@ -19,7 +19,7 @@ function Question({ onClickFunction, question, name, selected }) {
         name={ name }
         onClick={ onClickFunction }
         value="Não"
-        className={ selected === 'Não' && 'selected-btn' }
+        className={ selected === 'Não' ? 'selected-btn' : '' }
         >
           Não
         </button>

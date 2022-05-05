@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 function TextQuestion({ onClickFunction, question, name, field }) {
-  const verifyTextLimit = () => {
-    return field.length < 15 || field.length > 200
-  }
-
   return (
     <div>
       <h2>{ question }</h2>
@@ -16,7 +12,7 @@ function TextQuestion({ onClickFunction, question, name, field }) {
       className="response-textArea"
       />
       <span
-      className={ verifyTextLimit() && 'field-limit'}
+      className={ field.length < 15 || field.length > 200 ? 'field-limit' : '' }
       >
         { field.length }
       </span>    
